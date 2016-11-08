@@ -9,8 +9,7 @@ using namespace sf;
 Texture *initTexture(const std::string &path);
 int main (){
 
-	Mario *m= new Mario("images/mario.png");
-	m->print();
+	Mario *mario = new Mario("images/mario.png");
 	std::cout << "Mario lives " << MARIO_LIVES << std::endl;
 	RenderWindow window (VideoMode(800,640),"SFML window");
 	CircleShape shape(200.0f);
@@ -56,10 +55,9 @@ int main (){
 //			marioSprite.move(Vector2f(1,0));
 		}
 		window.clear();
-		
 		window.draw(shape);
 		window.draw(sprite);
-//		window.draw(marioSprite);
+		mario->draw(&window);		
 		window.display();
 	}
 	return 0;
